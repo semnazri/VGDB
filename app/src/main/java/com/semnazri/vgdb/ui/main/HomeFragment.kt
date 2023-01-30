@@ -1,15 +1,14 @@
 package com.semnazri.vgdb.ui.main
 
+import android.content.Intent
 import android.view.KeyEvent
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.semnazri.vgdb.R
 import com.semnazri.vgdb.base.BaseFragment
-import com.semnazri.vgdb.util.SpacerDecorator
-import com.semnazri.vgdb.util.convertDpToPx
-import com.semnazri.vgdb.util.onScrolledToLastChild
-import com.semnazri.vgdb.util.subscribeState
+import com.semnazri.vgdb.ui.detail.DetailGameACtivity
+import com.semnazri.vgdb.util.*
 import kotlinx.android.synthetic.main.fragment_content.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,7 +16,9 @@ class HomeFragment : BaseFragment() {
     private val viewModel by viewModel<GameViewModel>()
     private val gameAdapter by lazy {
         ListGameAdapter {
-            //TODO: handle with intent
+            val intent = Intent(requireActivity(), DetailGameACtivity::class.java)
+            intent.putExtra(AppConstant.GAME_KEYWORD, it.id!!)
+            startActivity(intent)
         }
     }
 

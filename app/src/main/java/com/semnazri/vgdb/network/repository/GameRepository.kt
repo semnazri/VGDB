@@ -1,6 +1,6 @@
 package com.semnazri.vgdb.network.repository
 
-import com.semnazri.vgdb.data.GameRemoteSource
+import com.semnazri.vgdb.data.remote.GameRemoteSource
 import com.semnazri.vgdb.model.details.GameDetailResponse
 import com.semnazri.vgdb.model.list.GameListResponse
 import com.semnazri.vgdb.util.ResultCall

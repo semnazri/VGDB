@@ -1,4 +1,4 @@
-package com.semnazri.vgdb.data
+package com.semnazri.vgdb.data.remote
 
 import com.semnazri.vgdb.BuildConfig
 import com.semnazri.vgdb.model.details.GameDetailResponse
@@ -22,13 +22,13 @@ interface GameRemoteSource {
         @Query("key") key: String = BuildConfig.API_KEY,
         @Query("search") searchKey: String,
         @Query("page") page: Int,
-        @Query("pageSize") size: Int = 50
+        @Query("pageSize") size: Int = 10
     ): Response<GameListResponse>
 
     @GET("games/{id}")
     suspend fun getGameDetail(
-        @Query("key") key: String = BuildConfig.API_KEY,
-        @Path("id", encoded = true) id: Int
+        @Path("id", encoded = true) id: Int,
+        @Query("key") key: String = BuildConfig.API_KEY
     ): Response<GameDetailResponse>
 
 

@@ -1,7 +1,7 @@
 package com.semnazri.vgdb.ui.main
 
 import com.semnazri.vgdb.base.BaseViewModel
-import com.semnazri.vgdb.domain.GetGameSearchUseCase
+import com.semnazri.vgdb.domain.remote.GetGameSearchUseCase
 import com.semnazri.vgdb.model.list.ResultsItem
 import com.semnazri.vgdb.util.PreferencesManager
 import com.semnazri.vgdb.util.ResultCall
@@ -35,17 +35,6 @@ class GameViewModel(
             )
         }
     }
-
-//    private fun loadGame(isLoadMore: Boolean, keyword: String) = launch {
-//        val deferred = mutableListOf<Deferred<Any>>()
-//        deferred.apply {
-//            add(
-//                requestGameAsync(isLoadMore = isLoadMore, keyWord = keyword)
-//        )
-//        }
-//        deferred.awaitAll()
-//    }
-
     private fun requestGame(isLoadMore: Boolean, keyword: String) = launch {
 
         if (isLoadMore) {

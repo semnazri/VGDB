@@ -1,4 +1,4 @@
-package com.semnazri.vgdb.domain
+package com.semnazri.vgdb.domain.remote
 
 import com.semnazri.vgdb.model.list.GameListResponse
 import com.semnazri.vgdb.network.repository.GameRepository

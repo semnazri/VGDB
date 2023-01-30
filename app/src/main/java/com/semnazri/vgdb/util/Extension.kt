@@ -26,14 +26,6 @@ inline fun <T> LifecycleOwner.subscribeState(
     }
 }
 
-inline fun <reified T : AppCompatActivity> Activity.startActivity(
-    vararg params: Pair<String, *> = arrayOf(),
-    actionIntent: Intent.() -> Unit = {}
-) {
-    val intent = IntentHelper.createIntent(this, T::class.java, params).apply(actionIntent)
-    startActivity(intent)
-}
-
 fun RecyclerView.onScrolledToLastChild(scrolledToLastChild: () -> Unit) {
 
     addOnScrollListener(object : RecyclerView.OnScrollListener() {

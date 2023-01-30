@@ -30,6 +30,7 @@ class ListGameAdapter(private val onItemClicked: (ResultsItem) -> Unit) :
                 item_game_title.text = contents.name
                 item_release_date.text = resources.getString(R.string.releaseDate, contents.released)
                 item_game_rating.text = contents.rating.toString()
+                setOnClickListener { onItemClicked.invoke(contents) }
             }
         }
     }
